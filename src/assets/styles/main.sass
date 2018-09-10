@@ -1,31 +1,38 @@
+*
+  box-sizing: border-box
 body
-  background: #e1dee9
-  color: #6e7271
-  padding-top: 200px
+  background: #ececec
+  padding: 0
+  margin: 0
 .container
-  max-width: 1200px
-  padding: 0 15px
+  width: 1200px
   margin: auto
-  display: block
-.btn
-  background: none
-  border: 1px solid #a09abc
-  color: #a09abc
-  background: #eee
-  padding: 10px 15px
-  font-size: 1rem
-  line-height: 1.5
-  font-family: sans-serif
-  border-radius: 2px
-  transition: all .3s
+  padding: 0 20px
+.portfolio
+  display: grid
+  grid-template: 1fr
+  grid-column-gap: 20px
+  grid-auto-flow: row dense
+  counter-reset: portfolio
+.project
+  margin-bottom: 20px
   cursor: pointer
-  &:hover
-    color: #fff
-    background: #a09abc
-.collapse
-  background: #fff
-  padding: 10px 30px
-  margin-top: 20px
-  border-radius: 3px
-  max-height: 1000px
-  display: none
+  counter-increment: portfolio
+  h2
+    color: #000
+    margin: 0
+    padding: 0
+  .project__name::after
+    content: counter(portfolio)
+  .project__img
+    width: 100%
+    height: auto
+  .project__body
+    display: none
+
+
+@media screen and (min-width: 640px)
+  .portfolio
+    grid-template-columns: repeat(4, 1fr)
+  .project__body
+    grid-column: span 4
