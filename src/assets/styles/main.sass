@@ -18,6 +18,7 @@ body
   margin-bottom: 20px
   cursor: pointer
   counter-increment: portfolio
+  overflow: hidden
   h2
     color: #000
     margin: 0
@@ -29,8 +30,13 @@ body
     height: auto
   .project__body
     display: none
-
-
+    background: #ffffff
+    padding: 10px
+.project__body
+    background: #ffffff
+    padding: 10px
+    margin-bottom: 15px
+    overflow: hidden
 @media screen and (min-width: 640px)
   .portfolio
     grid-template-columns: repeat(4, 1fr)

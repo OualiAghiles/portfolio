@@ -1,3 +1,13 @@
+mixin portfolio(projectId, projects)
+	.portfolio(id= projectId)
+		each item in projects
+			.project.js_item
+				img.project__img(src= item.img, alt="", srcset="")
+				h2.project__name()= item.name
+				.project__description()= item.description
+				.project__body.js_body
+					h3()= item.bodyTitle
+					p()= item.bodyDescription
 doctype html
 html(lang='en')
 	head
@@ -5,62 +15,81 @@ html(lang='en')
 		meta(charset='UTF-8')
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="assets/styles/main.css")
-		script(async, src="assets/scripts/app.js")
 	body
 		.container
 			h1.title
 				| Portfolio
-			.portfolio
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=0", alt="", srcset="")
-					h2.project__name p1
-					.project__description d1
-					.project__body.visible
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project__body.visible
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=10", alt="", srcset="")
-					h2.project__name p2
-					.project__description d2
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=2", alt="", srcset="")
-					h2.project__name p3
-					.project__description d3
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=3", alt="", srcset="")
-					h2.project__name p 4
-					.project__description d4
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=1", alt="", srcset="")
-					h2.project__name
-					.project__description
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=5", alt="", srcset="")
-					h2.project__name
-					.project__description
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
-				.project
-					img.project__img(src="https://picsum.photos/1000/300/?image=8", alt="", srcset="")
-					h2.project__name
-					.project__description
-					.project__body
-						h3 titre
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, exercitationem?
+			+portfolio("js-portfolio", [
+				{
+					'img':"https://lorempicsum.com/"+"rio"+"/255/200/1",
+					'name': "Rio",
+					'description': "Animation Film BIRD",
+					'bodyTitle': "Peroquet",
+					"bodyDescription": "Un oiseau bleu"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"up"+"/255/200/1",
+					'name': "UP",
+					'description': "Animation Film BALOON",
+					'bodyTitle': "Enfant Idiot",
+					"bodyDescription": "Maison a ballon"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"nemo"+"/255/200/1",
+					'name': "NEMO",
+					'description': "Animation Film FISH",
+					'bodyTitle': "Poisson",
+					"bodyDescription": "un poisson rouge"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"futurama"+"/255/200/1",
+					'name': "FURURAMA",
+					'description': "Animation SERIE OF ALIENS ",
+					'bodyTitle': "DES IDIOTS",
+					"bodyDescription": "Des idioties"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"simpsons"+"/255/200/1",
+					'name': "LES SIPMSON",
+					'description': "Animation SERIE OF IDIOTS ",
+					'bodyTitle': "DES IDIOTS",
+					"bodyDescription": "Des idioties"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"rio"+"/255/200/2",
+					'name': "Rio",
+					'description': "Animation Film BIRD",
+					'bodyTitle': "Peroquet",
+					"bodyDescription": "Un oiseau bleu"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"up"+"/255/200/2",
+					'name': "UP",
+					'description': "Animation Film BALOON",
+					'bodyTitle': "Enfant Idiot",
+					"bodyDescription": "Maison a ballon"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"nemo"+"/255/200/2",
+					'name': "NEMO",
+					'description': "Animation Film FISH",
+					'bodyTitle': "Poisson",
+					"bodyDescription": "un poisson rouge"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"futurama"+"/255/200/2",
+					'name': "FURURAMA",
+					'description': "Animation SERIE OF ALIENS ",
+					'bodyTitle': "DES IDIOTS",
+					"bodyDescription": "Des idioties"
+				},
+				{
+					'img':"https://lorempicsum.com/"+"simpsons"+"/255/200/2",
+					'name': "LES SIPMSON",
+					'description': "Animation SERIE OF IDIOTS ",
+					'bodyTitle': "DES IDIOTS",
+					"bodyDescription": "Des idioties"
+				}
+			])
+		script(src="assets/scripts/pollyfil.js")
+		script(src="assets/scripts/app.js")
